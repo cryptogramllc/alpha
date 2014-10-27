@@ -36,8 +36,8 @@
             <div class="page-content">
               <div class="main-title">PICT-O-JAM</div>
               <div class="feilds sign-in">
-                <input name="username" placeholder="Enter your Email">
-                <input name="password" placeholder="Enter your Password"><a class="button done">    Done   </a>
+                <input name="username" type="email" placeholder="Enter your Email">
+                <input name="password" type="password" placeholder="Enter your Password"><a class="button done">    Done   </a>
               </div>
               <div class="register">
                 <p>Not a member yet? Click <a href="#" class="link icon-only open-popup">here</a> to sign up.        </p>
@@ -60,8 +60,83 @@
         <div class="pages">
           <div class="page">
             <div class="page-content">
-              <div class="register-block"></div>
-              <div class="content-block"><a class="button register">Register</a></div>
+              <div class="register-block">
+                <form id="register" class="store-data list-block">
+                  <ul>
+                    <li>
+                      <div class="item-content">
+                        <div class="item-media"><i class="icon icon-form-name"></i></div>
+                        <div class="item-inner">
+                          <div class="item-title label">Name</div>
+                          <div class="item-input">
+                            <input type="text" placeholder="Your Name" name="name">
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="item-content">
+                        <div class="item-media"><i class="icon icon-form-email"></i></div>
+                        <div class="item-inner">
+                          <div class="item-title label">Email</div>
+                          <div class="item-input">
+                            <input type="email" placeholder="Your Email" name="email">
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <label class="label-radio item-content">
+                        <input type="radio" name="country" value="+1" checked="checked">
+                        <div class="item-inner">
+                          <div class="item-title">United States (+1)</div>
+                        </div>
+                      </label>
+                    </li>
+                    <li>
+                      <label class="label-radio item-content">
+                        <input type="radio" name="country" value="+44" checked="">
+                        <div class="item-inner">
+                          <div class="item-title">United Kingdom (+44)</div>
+                        </div>
+                      </label>
+                    </li>
+                    <li>
+                      <div class="item-content">
+                        <div class="item-media"><i class="icon icon-form-tel"></i></div>
+                        <div class="item-inner">
+                          <div class="item-title label">Mobile</div>
+                          <div class="item-input">
+                            <input type="tel" placeholder="Your Mobile" name="mobile">
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="item-content">
+                        <div class="item-media"><i class="icon icon-form-password"></i></div>
+                        <div class="item-inner">
+                          <div class="item-title label">Password</div>
+                          <div class="item-input">
+                            <input type="password" placeholder="Choose Password" name="password">
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="item-content">
+                        <div class="item-media"><i class="icon icon-form-password"></i></div>
+                        <div class="item-inner">
+                          <div class="item-title label">Confirm</div>
+                          <div class="item-input">
+                            <input type="password" placeholder="Confirm Password" name="confirm">
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul><a class="button register">Register</a>
+                </form>
+              </div>
             </div>
           </div>
         </div>

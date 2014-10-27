@@ -33,15 +33,13 @@ html.with-statusbar-overlay(manifest="manifest.php")
     // Views
     .views
       .view.view-main.navbar-fixed
-       
-            
         .pages
           .page(data-page="index")
             .page-content
               .main-title PICT-O-JAM
               .feilds.sign-in
-                 input(name="username", placeholder="Enter your Email")
-                 input(name="password", placeholder="Enter your Password")
+                 input(name="username", type="email", placeholder="Enter your Email")
+                 input(name="password", type="password", placeholder="Enter your Password")
                  a.button.done     Done   
               .register
                   p Not a member yet? Click <a href="#" class="link icon-only open-popup">here</a> to sign up.        
@@ -58,8 +56,61 @@ html.with-statusbar-overlay(manifest="manifest.php")
           .page
             .page-content
               .register-block
-              .content-block
-                a.button.register Register
+                form(id="register" class="store-data list-block")
+                  ul
+                    li
+                      div.item-content
+                        div.item-media
+                          i.icon.icon-form-name
+                        div.item-inner
+                           div.item-title.label Name
+                           div.item-input
+                             input(type="text", placeholder="Your Name", name="name")  
+                    li
+                      div.item-content
+                        div.item-media
+                          i.icon.icon-form-email
+                        div.item-inner
+                           div.item-title.label Email
+                           div.item-input
+                             input(type="email", placeholder="Your Email", name="email")
+                    li
+                      label.label-radio.item-content
+                        input(type="radio", name="country", value="+1", checked="checked")
+                        div.item-inner
+                            div.item-title United States (+1)
+                    li
+                      label.label-radio.item-content
+                        input(type="radio", name="country", value="+44", checked="")
+                        div.item-inner
+                            div.item-title United Kingdom (+44)
+                    li
+                      div.item-content
+                        div.item-media
+                          i.icon.icon-form-tel
+                        div.item-inner
+                           div.item-title.label Mobile
+                           div.item-input
+                             input(type="tel", placeholder="Your Mobile", name="mobile")
+                    li
+                      div.item-content
+                        div.item-media
+                          i.icon.icon-form-password
+                        div.item-inner
+                           div.item-title.label Password
+                           div.item-input
+                             input(type="password", placeholder="Choose Password", name="password")
+                    li
+                      div.item-content
+                        div.item-media
+                          i.icon.icon-form-password
+                        div.item-inner
+                           div.item-title.label Confirm
+                           div.item-input
+                             input(type="password", placeholder="Confirm Password", name="confirm")
+                  a.button.register Register
+            
+                
     // Template
     script(id="todo-item-template", type="text/template")
       ul

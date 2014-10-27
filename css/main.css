@@ -248,6 +248,7 @@ body.with-popup .statusbar-overlay {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 30px;
 }
 .register {
   position: absolute;
@@ -257,4 +258,17 @@ body.with-popup .statusbar-overlay {
   text-align: center;
   width: 100%;
   font-size: 16px;
+}
+#register a.button.register {
+  position: relative;
+  margin-top: 30px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+#register label.label-radio.item-content {
+  padding-left: 60px;
+}
+#register .visibility-hidden {
+  visibility: hidden;
 }

@@ -2,7 +2,6 @@
 
 header('Content-Type: text/cache-manifest');
 $filesToCache = array(
-/*
 
     './index.html', 
     './js/todo7.js', 
@@ -10,7 +9,7 @@ $filesToCache = array(
     './img/bg.jpg', 
     '../../dist/js/framework7.min.js', 
     '../../dist/css/framework7.min.css'
-*/
+
 );
 ?>
 CACHE MANIFEST
