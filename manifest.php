@@ -1,7 +1,8 @@
 <?php
 
 header('Content-Type: text/cache-manifest');
-$filesToCache = array(/*
+$filesToCache = array(
+/*
 
     './index.html', 
     './js/todo7.js', 
