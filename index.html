@@ -31,13 +31,22 @@
     <!-- Views-->
     <div class="views">
       <div class="view view-main navbar-fixed">
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="left"></div>
+            <div class="center sliding">Welcome</div>
+            <div class="right"></div>
+          </div>
+        </div>
         <div class="pages">
           <div data-page="index" class="page">
             <div class="page-content">
               <div class="main-title">PICT-O-JAM</div>
               <div class="feilds sign-in">
-                <input name="username" type="email" placeholder="Enter your Email">
-                <input name="password" type="password" placeholder="Enter your Password"><a class="button done">    Done   </a>
+                <form id="sign-in" action="/server/server.php" method="GET" class="ajax-submit">
+                  <input name="username" type="email" placeholder="Enter your Email">
+                  <input name="password" type="password" placeholder="Enter your Password"><a href="home.html" class="button done">Done   </a>
+                </form>
               </div>
               <div class="register">
                 <p>Not a member yet? Click <a href="#" class="link icon-only open-popup">here</a> to sign up.        </p>
@@ -61,7 +70,7 @@
           <div class="page">
             <div class="page-content">
               <div class="register-block">
-                <form id="register" class="store-data list-block">
+                <form id="register" action="" class="store-data list-block ajax-submit">
                   <ul>
                     <li>
                       <div class="item-content">

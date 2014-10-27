@@ -85,6 +85,17 @@ $$('.todo-items-list').on('delete', '.swipeout', function () {
     }
 });
 
+
+//Add Ajax Request
+$$('form.ajax-submit').on('submitted', function (e) {
+  var xhr = e.detail.xhr; // actual XHR object
+ console.log(xhr);
+  var data = e.detail.code; // Ajax repsonse from action file
+  // do something with response data
+  console.log(data);
+});
+
+
 // Update app when manifest updated 
 // http://www.html5rocks.com/en/tutorials/appcache/beginner/
 // Check if a new cache is available on page load.
