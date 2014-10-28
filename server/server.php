@@ -13,6 +13,8 @@
   $type();
 
   function signin(){
+     
+
 
   } 
 
@@ -24,10 +26,10 @@
      $phone = $_POST['phone'];
      $password = hash('sha256', $_POST['password']);
      $confirm = hash('sha256', $_POST['confirm']);
-     $avatar = $_POST['avatar'];
-    	
+   
 
-     
+        
+	
 
 
 

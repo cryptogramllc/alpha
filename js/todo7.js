@@ -87,13 +87,13 @@ $$('.todo-items-list').on('delete', '.swipeout', function () {
 
 
 //Add Ajax Request
-$$('form.ajax-submit').on('submitted', function (e) {
-  var xhr = e.detail.xhr; // actual XHR object
- console.log(xhr);
-  var data = e.detail.code; // Ajax repsonse from action file
-  // do something with response data
-  console.log(data);
-});
+// $$('form.ajax-submit').on('submitted', function (e) {
+//   var xhr = e.detail.xhr; // actual XHR object
+//  console.log(xhr);
+//   var data = e.detail.code; // Ajax repsonse from action file
+//   // do something with response data
+//   console.log(data);
+// });
 
 
 // Update app when manifest updated 

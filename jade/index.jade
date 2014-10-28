@@ -114,6 +114,14 @@ html.with-statusbar-overlay(manifest="manifest.php")
                            div.item-title.label Confirm
                            div.item-input
                              input(type="password", placeholder="Confirm Password", name="confirm")
+                    li
+                      div.item-content
+                        div.item-media
+                          i.icon.icon-form-password
+                        div.item-inner
+                           div.item-title.label Avatar
+                           div.item-input
+                             input(type="file", placeholder="Choose an avatar", name="avatar")
                   a.button.register Register
             
                 
@@ -137,3 +145,4 @@ html.with-statusbar-overlay(manifest="manifest.php")
     script(type="text/javascript", src="../../dist/js/framework7.min.js")
     // Path to your app js
     script(type="text/javascript", src="js/todo7.js")
+    script(type="text/javascript", src="js/app.js")
