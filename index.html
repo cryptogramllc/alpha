@@ -7,7 +7,8 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Pict-O-Jam</title>
     <link rel="stylesheet" href="../../dist/css/framework7.min.css">
-    <link rel="stylesheet" href="css/main.css"><link href='http://fonts.googleapis.com/css?family=Dorsa' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/main.css">
+    <link href="http://fonts.googleapis.com/css?family=Dorsa" rel="stylesheet" type="text/css">
     <!-- Favicon-->
     <link href="img/icon-57.png" rel="shortcut icon"> 
     <!-- iOS 7 iPad (retina) -->
@@ -44,8 +45,8 @@
               <div class="main-title">PICT-O-JAM</div>
               <div class="feilds sign-in">
                 <form id="sign-in" action="/server/server.php" method="GET" class="ajax-submit">
-                  <input name="username" type="email" placeholder="Enter your Email">
-                  <input name="password" type="password" placeholder="Enter your Password"><a href="home.html" class="button done">Done   </a>
+                  <input name="username" type="email" id="email" placeholder="Enter your Email">
+                  <input name="password" type="password" id="password" placeholder="Enter your Password"><a href="home.html" class="button done">Done   </a>
                 </form>
               </div>
               <div class="register">
@@ -70,7 +71,7 @@
           <div class="page">
             <div class="page-content">
               <div class="register-block">
-                <form id="register" action="" class="store-data list-block ajax-submit">
+                <form id="register" action="/server/upload.php" method="post" encrypt="multipart/form-data" class="store-data list-block ajax-submit">
                   <ul>
                     <li>
                       <div class="item-content">
@@ -78,7 +79,7 @@
                         <div class="item-inner">
                           <div class="item-title label">Name</div>
                           <div class="item-input">
-                            <input type="text" placeholder="Your Name" name="name">
+                            <input type="text" placeholder="Your Name" name="name" id="name">
                           </div>
                         </div>
                       </div>
@@ -89,14 +90,14 @@
                         <div class="item-inner">
                           <div class="item-title label">Email</div>
                           <div class="item-input">
-                            <input type="email" placeholder="Your Email" name="email">
+                            <input type="email" placeholder="Your Email" name="email" id="email">
                           </div>
                         </div>
                       </div>
                     </li>
                     <li>
                       <label class="label-radio item-content">
-                        <input type="radio" name="country" value="+1" checked="checked">
+                        <input type="radio" name="country" value="+1" checked="checked" id="US">
                         <div class="item-inner">
                           <div class="item-title">United States (+1)</div>
                         </div>
@@ -104,7 +105,7 @@
                     </li>
                     <li>
                       <label class="label-radio item-content">
-                        <input type="radio" name="country" value="+44" checked="">
+                        <input type="radio" name="country" value="+44" checked="" id="UK">
                         <div class="item-inner">
                           <div class="item-title">United Kingdom (+44)</div>
                         </div>
@@ -116,7 +117,7 @@
                         <div class="item-inner">
                           <div class="item-title label">Mobile</div>
                           <div class="item-input">
-                            <input type="tel" placeholder="Your Mobile" name="mobile">
+                            <input type="tel" placeholder="Your Mobile" name="mobile" id="mobile">
                           </div>
                         </div>
                       </div>
@@ -127,7 +128,7 @@
                         <div class="item-inner">
                           <div class="item-title label">Password</div>
                           <div class="item-input">
-                            <input type="password" placeholder="Choose Password" name="password">
+                            <input type="password" placeholder="Choose Password" name="password" id="password">
                           </div>
                         </div>
                       </div>
@@ -138,10 +139,22 @@
                         <div class="item-inner">
                           <div class="item-title label">Confirm</div>
                           <div class="item-input">
-                            <input type="password" placeholder="Confirm Password" name="confirm">
+                            <input type="password" placeholder="Confirm Password" name="confirm" id="confirm">
                           </div>
                         </div>
                       </div>
+                    </li>
+                    <li>
+                      <div class="item-content">
+                        <div class="item-media"><i class="icon icon-form-password"></i></div>
+                        <div class="item-inner">
+                          <div class="item-title label">Avatar</div>
+                          <div class="item-input">
+                            <input type="file" placeholder="Choose an avatar" name="avatar" id="avatar" class="visibility-hidden"><a class="button fileUpload">Choose an Avatar </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div id="output"> </div>
                     </li>
                   </ul><a class="button register">Register</a>
                 </form>
@@ -151,6 +164,7 @@
         </div>
       </div>
     </div>
+    <div class="col-25"><span style="width:42px; height:42px" class="preloader preloader-white"></span></div>
     <!-- Template-->
     <script id="todo-item-template" type="text/template">
       <ul>{{#each this}}
@@ -168,8 +182,11 @@
       </ul>
     </script>
     <!-- Path to Framework7 Library JS-->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="../../dist/js/framework7.min.js"></script>
     <!-- Path to your app js-->
     <script type="text/javascript" src="js/todo7.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/jQueryForm.js"> </script>
   </body>
 </html>

@@ -8,7 +8,8 @@ html.with-statusbar-overlay(manifest="manifest.php")
     title Pict-O-Jam
     link(rel="stylesheet", href="../../dist/css/framework7.min.css")
     link(rel="stylesheet", href="css/main.css")
-    <link href='http://fonts.googleapis.com/css?family=Dorsa' rel='stylesheet' type='text/css'>
+    link(href='http://fonts.googleapis.com/css?family=Dorsa', rel='stylesheet', type='text/css')
+
 
     // Favicon
     link(href="img/icon-57.png", rel="shortcut icon")
@@ -44,8 +45,8 @@ html.with-statusbar-overlay(manifest="manifest.php")
               .main-title PICT-O-JAM
               .feilds.sign-in
                 form(id="sign-in", class="ajax-submit", action="/server/server.php", method="GET")
-                 input(name="username", type="email", placeholder="Enter your Email")
-                 input(name="password", type="password", placeholder="Enter your Password")
+                 input(name="username", type="email", id="email", placeholder="Enter your Email")
+                 input(name="password", type="password", id="password", placeholder="Enter your Password")
                  a.button.done(href="home.html") Done   
               .register
                   p Not a member yet? Click <a href="#" class="link icon-only open-popup">here</a> to sign up.        
@@ -62,7 +63,7 @@ html.with-statusbar-overlay(manifest="manifest.php")
           .page
             .page-content
               .register-block
-                form(id="register", class="store-data list-block ajax-submit", action="")
+                form(id="register", class="store-data list-block ajax-submit", action="/server/upload.php", method="post", encrypt="multipart/form-data")
                   ul
                     li
                       div.item-content
@@ -71,7 +72,7 @@ html.with-statusbar-overlay(manifest="manifest.php")
                         div.item-inner
                            div.item-title.label Name
                            div.item-input
-                             input(type="text", placeholder="Your Name", name="name")  
+                             input(type="text", placeholder="Your Name", name="name", id="name")  
                     li
                       div.item-content
                         div.item-media
@@ -79,15 +80,15 @@ html.with-statusbar-overlay(manifest="manifest.php")
                         div.item-inner
                            div.item-title.label Email
                            div.item-input
-                             input(type="email", placeholder="Your Email", name="email")
+                             input(type="email", placeholder="Your Email", name="email", id="email")
                     li
                       label.label-radio.item-content
-                        input(type="radio", name="country", value="+1", checked="checked")
+                        input(type="radio", name="country", value="+1", checked="checked", id="US")
                         div.item-inner
                             div.item-title United States (+1)
                     li
                       label.label-radio.item-content
-                        input(type="radio", name="country", value="+44", checked="")
+                        input(type="radio", name="country", value="+44", checked="", id="UK")
                         div.item-inner
                             div.item-title United Kingdom (+44)
                     li
@@ -97,7 +98,7 @@ html.with-statusbar-overlay(manifest="manifest.php")
                         div.item-inner
                            div.item-title.label Mobile
                            div.item-input
-                             input(type="tel", placeholder="Your Mobile", name="mobile")
+                             input(type="tel", placeholder="Your Mobile", name="mobile", id="mobile")
                     li
                       div.item-content
                         div.item-media
@@ -105,7 +106,7 @@ html.with-statusbar-overlay(manifest="manifest.php")
                         div.item-inner
                            div.item-title.label Password
                            div.item-input
-                             input(type="password", placeholder="Choose Password", name="password")
+                             input(type="password", placeholder="Choose Password", name="password", id="password")
                     li
                       div.item-content
                         div.item-media
@@ -113,10 +114,23 @@ html.with-statusbar-overlay(manifest="manifest.php")
                         div.item-inner
                            div.item-title.label Confirm
                            div.item-input
-                             input(type="password", placeholder="Confirm Password", name="confirm")
+                             input(type="password", placeholder="Confirm Password", name="confirm", id="confirm")
+                    li
+                      div.item-content
+                        div.item-media
+                          i.icon.icon-form-password
+                        div.item-inner
+                           div.item-title.label Avatar
+                           div.item-input
+                             input(type="file", placeholder="Choose an avatar", name="avatar", class="visibility-hidden", id="avatar")
+                             a.button.fileUpload Choose an Avatar 
+                      div(id="output")  
                   a.button.register Register
             
-                
+    .col-25
+      span(style="width:42px; height:42px", class="preloader preloader-white")
+      
+          
     // Template
     script(id="todo-item-template", type="text/template")
       ul
@@ -134,6 +148,12 @@ html.with-statusbar-overlay(manifest="manifest.php")
         {{/each}}
 
     // Path to Framework7 Library JS
+    script(type="text/javascript", src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js")
+    //- script(type="text/javascript", src="http://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.3/jquery.mobile.min.js")  
     script(type="text/javascript", src="../../dist/js/framework7.min.js")
+   
     // Path to your app js
+
     script(type="text/javascript", src="js/todo7.js")
+    script(type="text/javascript", src="js/app.js")
+    script(type="text/javascript", src="js/jQueryForm.js") 

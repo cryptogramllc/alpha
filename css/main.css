@@ -288,6 +288,7 @@ body.with-popup .statusbar-overlay {
   width: 50%;
   margin-left: auto;
   margin-right: auto;
+  opacity: 1;
 }
 #register label.label-radio.item-content {
   padding-left: 60px;
@@ -295,6 +296,31 @@ body.with-popup .statusbar-overlay {
 #register .visibility-hidden {
   visibility: hidden;
 }
+#register .fileUpload {
+  margin-top: -20px;
+}
+#register #avatar_preview {
+  border-radius: 100%;
+  border: 1px solid #fff;
+  margin-top: 10px;
+}
+#register img.iphone-image {
+  -ms-transform: rotate(90deg);
+  /* IE 9 */
+  -webkit-transform: rotate(90deg);
+  /* Chrome, Safari, Opera */
+  transform: rotate(90deg);
+}
 .home .page-content {
   background: #efeff4;
+}
+.col-25 {
+  position: absolute;
+  top: 0;
+  z-index: 5000;
+  top: 50%;
+  left: 50%;
+  margin-left: -21px;
+  margin-top: -21px;
+  display: none;
 }
