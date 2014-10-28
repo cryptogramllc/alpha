@@ -1,5 +1,4 @@
 <?php
-
 header('Content-Type: text/cache-manifest');
 $filesToCache = array(
 
