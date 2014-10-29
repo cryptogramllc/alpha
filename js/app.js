@@ -8,24 +8,28 @@ $(document).ready(function(){
     //register click trigger
     $('a.register').on('click', function(){
            	
-           // var code = "";	
-           
-           // var type = "register";
-           // var name = $('#name').val();
-           // var email = $('#email').val(); 
-           // var country = $('#country').val();
-           // var mobile = $('#mobile').val(); 
-           // var password = $('#password').val(); 
-           // var confirm = $('#confirm').val();
-           // var avatar = $('input#avatar')[0].files[0].serialize(); 
+           var code = "";	
+           var type = "register";
+           var name = $('#name').val();
+           var email = $('#email').val(); 
+           var num_code;
+        
+           $('input[type="radio"]').each(function(){
+				var checkbox = $(this).is(':checked');
+			    if(checkbox){ num_code = $(this).val(); }
+			});
 
-           // var data = {type:type, name:name, email:email, country:country, mobile:mobile, password:password, confirm:confirm, avatar:avatar};  
+           var number = $('#mobile').val();
+           var mobile = num_code + number; 
+           var password = $('#password').val(); 
+           var confirm = $('#confirm').val();
+           var avatar = $('#avatar_preview').attr('src');
+           var data = {type:type, name:name, email:email, mobile:mobile, password:password, confirm:confirm, avatar:avatar};  
 
-           // ajaxCall(data);
+           ajaxCall(data);
 
 			
 
-             //function to check file size before uploading.
 			
     });
 
@@ -36,7 +40,7 @@ $(document).ready(function(){
 	var options = { 
 	    target: '#output',   // target element(s) to be updated with server response 
 	    beforeSubmit:  beforeSubmit,  // pre-submit callback 
-	    resetForm: true        // reset the form after successful submit 
+	    resetForm: false        // reset the form after successful submit 
 	}; 
 
 	$('form#register').submit(function() { 
@@ -76,7 +80,7 @@ $(document).ready(function(){
 		    //Allowed file size is less than 1 MB (1048576)
 		    if(fsize>1048576) 
 		    {
-		        $("#output").html("<b>"+fsize +"</b> Too big Image file! <br />Please reduce the size of your photo using an image editor.");
+		        $("#output").html("<b>"+ fsize +"</b> Too big Image file! <br />Please reduce the size of your photo using an image editor.");
 		        return false
 		    }
 		            
@@ -96,28 +100,28 @@ $(document).ready(function(){
 
     
    
-   // //ajax
-   // function ajaxCall(data){
+   //ajax
+   function ajaxCall(data){
 
-   //    var postData = data;
+      var postData = data;
      
-   //     console.log(postData);
-   //     $.ajax({
-   //     	  url: 'http://54.69.118.223/server/server.php',
-   //     	  type: 'POST',
-   //     	  data: postData,
-   //     	  dataType: 'html',
-   //     	  cache: false,
-   //     	  beforeSend:function(){
+       console.log(postData);
+       $.ajax({
+       	  url: 'http://54.69.118.223/server/server.php',
+       	  type: 'POST',
+       	  data: postData,
+       	  dataType: 'html',
+       	  cache: false,
+       	  beforeSend:function(){
 
-   //     	  },
-   //     	  success: function(data){
-   //                  console.log(data);
-   //     	  }
+       	  },
+       	  success: function(data){
+            console.log(data);
+       	  }
 
-   //     }); 
+       }); 
 
-   // }
+   }
 
 
 

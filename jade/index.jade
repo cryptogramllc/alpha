@@ -45,8 +45,8 @@ html.with-statusbar-overlay(manifest="manifest.php")
               .main-title PICT-O-JAM
               .feilds.sign-in
                 form(id="sign-in", class="ajax-submit", action="/server/server.php", method="GET")
-                 input(name="username", type="email", id="email", placeholder="Enter your Email")
-                 input(name="password", type="password", id="password", placeholder="Enter your Password")
+                 input(name="username", type="email", id="user_email", placeholder="Enter your Email")
+                 input(name="password", type="password", id="user_password", placeholder="Enter your Password")
                  a.button.done(href="home.html") Done   
               .register
                   p Not a member yet? Click <a href="#" class="link icon-only open-popup">here</a> to sign up.        
@@ -118,13 +118,13 @@ html.with-statusbar-overlay(manifest="manifest.php")
                     li
                       div.item-content
                         div.item-media
-                          i.icon.icon-form-password
+                          i.icon.icon-form
                         div.item-inner
                            div.item-title.label Avatar
                            div.item-input
                              input(type="file", placeholder="Choose an avatar", name="avatar", class="visibility-hidden", id="avatar")
                              a.button.fileUpload Choose an Avatar 
-                      div(id="output")  
+                  div(id="output")  
                   a.button.register Register
             
     .col-25
