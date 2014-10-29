@@ -4,6 +4,11 @@
   text-align: center;
   position: relative;
 }
+.feilds ul {
+  background: none;
+  color: #fff;
+  border: none;
+}
 .feilds input {
   -webkit-appearance: none;
   width: 90%;
@@ -12,7 +17,7 @@
   padding: 14px;
   margin: 5px 0px;
   background: rgba(255, 255, 255, 0.2);
-  color: #fff;
+  color: #fff !important;
   font-size: 15px;
 }
 .feilds button {

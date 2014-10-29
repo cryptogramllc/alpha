@@ -34,7 +34,7 @@ html.with-statusbar-overlay(manifest="manifest.php")
     // Views
     .views
       .view.view-main.navbar-fixed
-        .navbar
+        .navbar.hidden
           .navbar-inner
             .left
             .center.sliding Welcome
@@ -44,14 +44,31 @@ html.with-statusbar-overlay(manifest="manifest.php")
             .page-content
               .main-title PICT-O-JAM
               .feilds.sign-in
-                form(id="sign-in", class="ajax-submit", action="/server/server.php", method="GET")
-                 input(name="username", type="email", id="user_email", placeholder="Enter your Email")
-                 input(name="password", type="password", id="user_password", placeholder="Enter your Password")
+                form(id="sign-in", class="store-data list-block ajax-submit", action="/server/server.php", method="GET")
+                  ul
+                    li
+                      label.label-radio.item-content
+                        input(type="radio", name="country", value="+1", checked="checked", id="US")
+                        div.item-inner
+                            div.item-title United States (+1)
+                    li
+                      label.label-radio.item-content
+                        input(type="radio", name="country", value="+44", checked="", id="UK")
+                        div.item-inner
+                            div.item-title United Kingdom (+44)
+                    li
+                      div.item-content
+                        div.item-media
+                          i.icon.icon-form-tel
+                        div.item-inner
+                           div.item-title.label Mobile
+                           div.item-input
+                               input(type="tel", placeholder="Your Mobile", name="mobile", id="mobile")
                  a.button.done(href="home.html") Done   
-              .register
+              //- .register
                   p Not a member yet? Click <a href="#" class="link icon-only open-popup">here</a> to sign up.        
     // Popup to add new task           
-    .popup
+    //- .popup
       .view.view-popup.navbar-fixed
         .navbar
           .navbar-inner
@@ -124,11 +141,10 @@ html.with-statusbar-overlay(manifest="manifest.php")
                            div.item-input
                              input(type="file", placeholder="Choose an avatar", name="avatar", class="visibility-hidden", id="avatar")
                              a.button.fileUpload Choose an Avatar 
-<<<<<<< HEAD
+
                   div(id="output")  
-=======
-                        div(id="output")  
->>>>>>> a153e997866ab212f760a1ff680a1959e3ab9e68
+
+
                   a.button.register Register
             
     .col-25

@@ -32,7 +32,7 @@
     <!-- Views-->
     <div class="views">
       <div class="view view-main navbar-fixed">
-        <div class="navbar">
+        <div class="navbar hidden">
           <div class="navbar-inner">
             <div class="left"></div>
             <div class="center sliding">Welcome</div>
@@ -44,57 +44,8 @@
             <div class="page-content">
               <div class="main-title">PICT-O-JAM</div>
               <div class="feilds sign-in">
-                <form id="sign-in" action="/server/server.php" method="GET" class="ajax-submit">
-                  <input name="username" type="email" id="user_email" placeholder="Enter your Email">
-                  <input name="password" type="password" id="user_password" placeholder="Enter your Password"><a href="home.html" class="button done">Done   </a>
-                </form>
-              </div>
-              <div class="register">
-                <p>Not a member yet? Click <a href="#" class="link icon-only open-popup">here</a> to sign up.        </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Popup to add new task           -->
-    <div class="popup">
-      <div class="view view-popup navbar-fixed">
-        <div class="navbar">
-          <div class="navbar-inner">
-            <div class="left"></div>
-            <div class="center sliding">Register</div>
-            <div class="right"><a href="#" class="link close-popup">Cancel</a></div>
-          </div>
-        </div>
-        <div class="pages">
-          <div class="page">
-            <div class="page-content">
-              <div class="register-block">
-                <form id="register" action="/server/upload.php" method="post" encrypt="multipart/form-data" class="store-data list-block ajax-submit">
+                <form id="sign-in" action="/server/server.php" method="GET" class="store-data list-block ajax-submit">
                   <ul>
-                    <li>
-                      <div class="item-content">
-                        <div class="item-media"><i class="icon icon-form-name"></i></div>
-                        <div class="item-inner">
-                          <div class="item-title label">Name</div>
-                          <div class="item-input">
-                            <input type="text" placeholder="Your Name" name="name" id="name">
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="item-content">
-                        <div class="item-media"><i class="icon icon-form-email"></i></div>
-                        <div class="item-inner">
-                          <div class="item-title label">Email</div>
-                          <div class="item-input">
-                            <input type="email" placeholder="Your Email" name="email" id="email">
-                          </div>
-                        </div>
-                      </div>
-                    </li>
                     <li>
                       <label class="label-radio item-content">
                         <input type="radio" name="country" value="+1" checked="checked" id="US">
@@ -122,48 +73,15 @@
                         </div>
                       </div>
                     </li>
-                    <li>
-                      <div class="item-content">
-                        <div class="item-media"><i class="icon icon-form-password"></i></div>
-                        <div class="item-inner">
-                          <div class="item-title label">Password</div>
-                          <div class="item-input">
-                            <input type="password" placeholder="Choose Password" name="password" id="password">
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="item-content">
-                        <div class="item-media"><i class="icon icon-form-password"></i></div>
-                        <div class="item-inner">
-                          <div class="item-title label">Confirm</div>
-                          <div class="item-input">
-                            <input type="password" placeholder="Confirm Password" name="confirm" id="confirm">
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="item-content">
-                        <div class="item-media"><i class="icon icon-form"></i></div>
-                        <div class="item-inner">
-                          <div class="item-title label">Avatar</div>
-                          <div class="item-input">
-                            <input type="file" placeholder="Choose an avatar" name="avatar" id="avatar" class="visibility-hidden"><a class="button fileUpload">Choose an Avatar </a>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
                   </ul>
-                  <div id="output"> </div><a class="button register">Register</a>
-                </form>
+                </form><a href="home.html" class="button done">Done   </a>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <!-- Popup to add new task           -->
     <div class="col-25"><span style="width:42px; height:42px" class="preloader preloader-white"></span></div>
     <!-- Template-->
     <script id="todo-item-template" type="text/template">

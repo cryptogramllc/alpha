@@ -6,6 +6,9 @@
   opacity: 0.5;
   letter-spacing: 3PX;
 }
+.navbar.hidden {
+  visibility: hidden;
+}
 .navbar .navbar-inner {
   -webkit-transition: background-color 100ms linear;
   -moz-transition: background-color 100ms linear;
@@ -243,6 +246,11 @@ body.with-popup .statusbar-overlay {
   text-align: center;
   position: relative;
 }
+.feilds ul {
+  background: none;
+  color: #fff;
+  border: none;
+}
 .feilds input {
   -webkit-appearance: none;
   width: 90%;
@@ -251,7 +259,7 @@ body.with-popup .statusbar-overlay {
   padding: 14px;
   margin: 5px 0px;
   background: rgba(255, 255, 255, 0.2);
-  color: #fff;
+  color: #fff !important;
   font-size: 15px;
 }
 .feilds button {
