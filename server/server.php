@@ -11,6 +11,7 @@
   $type();
 
   function sign_in(){
+
       mysql_connect('54.69.118.223', 'pictouser', 'jammer121'); 
       mysql_select_db('mydb');
       
@@ -18,7 +19,17 @@
       
       $string = substr(str_shuffle(abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ),0, 1) . substr(str_shuffle(aBcEeFgHiJkLmNoPqRstUvWxYz0123456789),0, 31);
       $ver_code = substr($string, 0, 6);
-     
+      
+      $result = mysql_query("SELECT phone FROM users WHERE phone = '$mobile'");
+      if(mysql_num_rows($result) == 0) {
+      // row not found, do stuff...
+         mysql_query("INSERT INTO users(phone, verification_code) VALUES ('$mobile', '$ver_code')");
+      } else {
+      // do other stuff...
+         mysql_query("UPDATE users SET verification_code='$ver_code'");
+      }
+      
+      
   } 
 
 
