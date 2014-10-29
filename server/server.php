@@ -10,10 +10,15 @@
   $type = $_POST['type'];
   $type();
 
-  function signin(){
+  function sign_in(){
+      mysql_connect('54.69.118.223', 'pictouser', 'jammer121'); 
+      mysql_select_db('mydb');
+      
+      $mobile = $_POST['mobile'];
+      
+      $string = substr(str_shuffle(abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ),0, 1) . substr(str_shuffle(aBcEeFgHiJkLmNoPqRstUvWxYz0123456789),0, 31);
+      $ver_code = substr($string, 0, 6);
      
-
-
   } 
 
 

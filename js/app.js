@@ -98,6 +98,21 @@ $(document).ready(function(){
 
 
 
+    $('a.done').on('click', function(){
+          
+		var type = 'sign_in';
+		$('input[type="radio"]').each(function(){
+				var checkbox = $(this).is(':checked');
+			    if(checkbox){ num_code = $(this).val(); }
+		});
+
+		var number = $('#mobile').val();
+		var mobile = num_code + number; 
+		var data = {type:type,, mobile:mobile};  
+		ajaxCall(data);
+    });
+
+
     
    
    //ajax
@@ -122,6 +137,9 @@ $(document).ready(function(){
        }); 
 
    }
+
+   
+
 
 
 
