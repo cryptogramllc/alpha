@@ -108,7 +108,7 @@ $(document).ready(function(){
 
 		var number = $('#mobile').val();
 		var mobile = num_code + number; 
-		var data = {type:type,, mobile:mobile};  
+		var data = {type:type, mobile:mobile};  
 		ajaxCall(data);
     });
 

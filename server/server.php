@@ -1,6 +1,11 @@
 <?php
+   error_reporting(-1);
+   ini_set('display_errors', 'On');
 
-  
+
+
+require 'twilio-php-master/Services/Twilio.php';
+   
   // $string = substr(str_shuffle(abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ),0, 1) . substr(str_shuffle(aBcEeFgHiJkLmNoPqRstUvWxYz0123456789),0, 31);
   // $code = substr($string, 0, 6);
   // $arr = array('code' => $code);
@@ -20,16 +25,29 @@
       $string = substr(str_shuffle(abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ),0, 1) . substr(str_shuffle(aBcEeFgHiJkLmNoPqRstUvWxYz0123456789),0, 31);
       $ver_code = substr($string, 0, 6);
       
-      $result = mysql_query("SELECT phone FROM users WHERE phone = '$mobile'");
+      $result = mysql_query("SELECT * FROM `users` WHERE `phone` = '$mobile'");
       if(mysql_num_rows($result) == 0) {
       // row not found, do stuff...
-         mysql_query("INSERT INTO users(phone, verification_code) VALUES ('$mobile', '$ver_code')");
+         mysql_query("INSERT INTO `users`(`phone`, `verification_code`) VALUES ('$mobile', '$ver_code')");
+
       } else {
       // do other stuff...
-         mysql_query("UPDATE users SET verification_code='$ver_code'");
+         mysql_query("UPDATE `users` SET `verification_code`='$ver_code'");
       }
       
-      
+
+      // $sid = "AC65f408f0dd0b97b2ca15ff6eeadfd310"; // Your Account SID from www.twilio.com/user/account
+      // $token = "34e70e70f3793e4fcdc635e6a35a0a7a"; // Your Auth Token from www.twilio.com/user/account
+
+      // $client = new Services_Twilio($sid, $token);
+      // $message = $client->account->messages->sendMessage(
+      //   '441303570130', // From a valid Twilio number
+      //   $mobile, // Text this number
+      //   "Pict-o-Jam - Your Verification Code is $ver_code."
+      // );
+
+      // print $message->sid;
+
   } 
 
 
