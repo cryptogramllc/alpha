@@ -31,6 +31,36 @@ $$('.popup .color').on('click', function () {
     $$(this).addClass('selected');
 });
 
+$$('.done.prompt-ok').on('click', function () {
+    var number = $('#mobile').val();
+    if( number == ''){
+        myApp.alert('Please enter your mobile number in order to proceed.');   
+        return false;           
+    }
+    else{
+         var type = 'sign_in';
+        $('input[type="radio"]').each(function(){
+             var checkbox = $(this).is(':checked');
+            if(checkbox){ num_code = $(this).val(); }
+        });
+
+
+        var mobile = num_code + number; 
+        var data = {type:type, mobile:mobile};  
+            ajaxCall(data);
+
+      myApp.prompt('Please enter the verification code sent to your device via SMS.', function (value) {
+            var type = "verify";
+            var code = value;
+            data = {type:type, code:code, mobile:mobile};
+            ajaxCall(data); 
+        });
+
+    }
+
+
+  
+});
 
 // Add Task
 $$('.popup .add-task').on('click', function () {
@@ -49,6 +79,9 @@ $$('.popup .add-task').on('click', function () {
     buildTodoListHtml();
     myApp.closeModal('.popup');
 });
+
+
+
 
 // Build Todo HTML using Template7 template engine
 var todoItemTemplateSource = $$('#todo-item-template').html();
@@ -84,6 +117,33 @@ $$('.todo-items-list').on('delete', '.swipeout', function () {
         localStorage.td7Data = JSON.stringify(todoData);
     }
 });
+
+
+ function ajaxCall(data){
+
+      var postData = data;
+     
+       console.log(postData);
+       $.ajax({
+          url: 'http://54.69.118.223/server/server.php',
+          type: 'POST',
+          data: postData,
+          dataType: 'html',
+          cache: false,
+          beforeSend:function(){
+
+          },
+          success: function(data){
+            console.log(data);
+                if(data == 'success'){
+                        myApp.alert('Thank you for registering. Login?');
+                }
+          }
+
+       }); 
+
+   }
+
 
 
 

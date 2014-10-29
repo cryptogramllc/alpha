@@ -4,7 +4,7 @@
 
 
 
-require 'twilio-php-master/Services/Twilio.php';
+require '../twilio-php-master/Services/Twilio.php';
    
   // $string = substr(str_shuffle(abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ),0, 1) . substr(str_shuffle(aBcEeFgHiJkLmNoPqRstUvWxYz0123456789),0, 31);
   // $code = substr($string, 0, 6);
@@ -43,7 +43,7 @@ require 'twilio-php-master/Services/Twilio.php';
       // $message = $client->account->messages->sendMessage(
       //   '441303570130', // From a valid Twilio number
       //   $mobile, // Text this number
-      //   "Pict-o-Jam - Your Verification Code is $ver_code."
+      //   "Pict-o-Jam - Your Verification Code is : $ver_code."
       // );
 
       // print $message->sid;
@@ -70,7 +70,7 @@ require 'twilio-php-master/Services/Twilio.php';
        mysql_query("INSERT INTO `users`(`name`, `email`, `phone`, `password`, `verification_code`, `avatar`) VALUES('$fullname', '$email', '$phone', '$password', '$ver_code', '$avatar')");
      
      
-	 // mysql_query()
+	     // mysql_query()
      
 
       
@@ -78,7 +78,15 @@ require 'twilio-php-master/Services/Twilio.php';
   }
 
 
-
+   function verify(){
+      mysql_connect('54.69.118.223', 'pictouser', 'jammer121'); 
+      mysql_select_db('mydb');
+      $code = $_POST['code'];
+      $mobile = $_POST['mobile'];
+      $result = mysql_query("SELECT * FROM `users` WHERE `phone` = '$mobile' AND `verification_code` = '$code'");
+      if(mysql_num_rows($result) == 0) { echo 'success'; }
+      else { echo 'error'; }
+   }
 
 
 
