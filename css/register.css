@@ -7,6 +7,14 @@
   width: 100%;
   font-size: 16px;
 }
+#register ul {
+  border: none;
+  background: none;
+}
+#register a.button {
+  border-color: #cc0442;
+  color: #cc0442;
+}
 #register a.button.register {
   position: relative;
   margin-top: 30px;
