@@ -48,19 +48,20 @@ $$('.done.prompt-ok').on('click', function () {
         var mobile = num_code + number; 
         var data = {type:type, mobile:mobile};  
             ajaxCall(data);
+            verification_code(mobile);
+    }
+});
 
-      myApp.prompt('Please enter the verification code sent to your device via SMS.', function (value) {
+function verification_code(mobile){
+    console.log(mobile);
+    myApp.prompt('Please enter the verification code sent to your device via SMS.', function (value) {
             var type = "verify";
             var code = value;
             data = {type:type, code:code, mobile:mobile};
             ajaxCall(data); 
         });
+}
 
-    }
-
-
-  
-});
 
 // Add Task
 $$('.popup .add-task').on('click', function () {
@@ -135,11 +136,21 @@ $$('.todo-items-list').on('delete', '.swipeout', function () {
           },
           success: function(data){
             console.log(data);
-                if(data == 'success'){
-                        myApp.alert('Thank you for registering. Login?');
+              if(postData.type == 'verify'){
+                if(data == 'success'){ 
+                    myApp.alert('Thank you for registering. Login?', function(){
+                    
+                          $('.navbar').removeClass('hidden');
+                          mainView.router.loadPage('profile.html');
+                   });
                 }
+                else{ myApp.alert('There was an error with your code! Try again.', function () {
+                         verification_code(postData.mobile);
+                    });  
+                }
+               }
           }
-
+     
        }); 
 
    }

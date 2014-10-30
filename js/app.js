@@ -1,10 +1,11 @@
 $(document).ready(function(){
+  
    //functions	
 	$('.fileUpload').click(function(){
     $('input#avatar').focus().click();
        return false;
     });
- 
+     
     //register click trigger
     $('a.register').on('click', function(){
            	
