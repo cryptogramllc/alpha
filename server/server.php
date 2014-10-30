@@ -32,7 +32,7 @@ require '../twilio-php-master/Services/Twilio.php';
 
       } else {
       // do other stuff...
-         mysql_query("UPDATE `users` SET `verification_code`='$ver_code'");
+         mysql_query("UPDATE `users` SET `verification_code`='$ver_code' WHERE `phone` = '$mobile' ");
       }
       
 
@@ -84,8 +84,8 @@ require '../twilio-php-master/Services/Twilio.php';
       $code = $_POST['code'];
       $mobile = $_POST['mobile'];
       $result = mysql_query("SELECT * FROM `users` WHERE `phone` = '$mobile' AND `verification_code` = '$code'");
-      if(mysql_num_rows($result) == 0) { echo 'success'; }
-      else { echo 'error'; }
+      if(mysql_num_rows($result) == 0) { echo 'fail'; }
+      else { echo 'success'; }
    }
 
 
