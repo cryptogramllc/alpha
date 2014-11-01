@@ -27,10 +27,7 @@ $(document).ready(function(){
            var data = {type:type, name:name, email:email, mobile:mobile, password:password, confirm:confirm, avatar:avatar};  
 
            ajaxCall(data);
-
-			
-
-			
+	
     });
 
      $('input#avatar').on('change', function(){

@@ -1,6 +1,6 @@
 // Initialize your app
 var myApp = new Framework7({
-    modalTitle: 'ToDo7'
+    modalTitle: 'Pict-O-Jam'
 });
 
 // Export selectors engine
