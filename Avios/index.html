@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+   <head>
+   		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
+	   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	   	
+	   	<link rel="stylesheet" href="avios-core.css" type="text/css" />
+   	    <script type="text/javascript">
+   	        // USE "$$" prefix to identify the later version of jQuery. 
+            var $$ = jQuery.noConflict();
+		</script>
+		<link rel="stylesheet" type="type/css" href="style.css">
+   </head>
+   <body>
+		<header> Header </header>
+		<div class="wrap">
+			<section class="main"> 
+			<form id="flightFinder" data-action="flightFinderResults" data-type="flightFinder">
+				<h4>Title</h4>
+				<p>Intro</p>
+				<a href="help.html" data-function="sidePanel"> Help </a>
+				<ol>
+					<li>
+						<div class="fly-from">
+					       <label>From
+					         <input type="text" id="fly-from" placeholder="Enter a city" />
+					       </label>
+					    </div>
+				    </li>
+
+
+				    <li>	
+						<div class="fly-to">
+						    <label>To
+						         <input type="text" id="fly-to" placeholder="Enter a city, country or continent" />
+						    </label>
+						</div>
+				    </li>
+
+				    
+				    <li>
+						<div class="depart">
+							<label>Depart
+						        <input type="month" id="depart" placeholder="Depature Date"/>
+						    </label>
+						    
+						</div>
+					</li>
+					
+					
+					<li>
+						<div class="one-way">
+							<label>
+						        <input type="checkbox" value="one-way" id="one-way" />One Way
+						    </label>
+						</div>
+				    </li>
+
+					
+
+					<li>
+						<div class="return">
+						    <label>Return
+						    	  <input type="month" id="return" placeholder="Return Date" />
+						    </label>
+						</div>
+				    </li>
+
+
+					
+                    <!--
+<li> 
+						<div class="cabin class">
+						    <label>Cabin Class
+						    	  <select>
+						    	    <option selected>All</option>
+						    	    <option >First</option>
+						    	    <option >Business</option>
+						    	    <option >World Traveler</option>
+						    	    <option >Economy</option>
+						          </select>
+						    </label>
+						</div>
+				    </li>
+-->
+
+
+				    <li>
+						<div class="adults-num">
+							<label> Adults(18+)
+						          <button class="" value="-1" data-function="compute"> - </button>
+						          <span class="numAdult buttonVal">0</span>
+						          <button class="" value="+1" data-function="compute"> + </button>
+						    </label>
+						</div> 
+				    </li>
+
+				    <li>
+						<div class="child-num">
+							<label> Children(1-17)
+								<button class="" value="-1" data-function="compute, childField"> - </button>
+								<span class="numchild buttonVal">0</span>
+								<button class="" value="+1" data-function="compute, childField"> + </button>
+							</label>
+						</div>
+					</li>
+
+					<li>
+						<div class="child-ages">
+							 <label> Children's Ages
+		                             <div>
+
+		                             </div>
+							 </label>
+
+						</div>
+				    </li>
+			    </ol>
+				<button data-function="submitForm, sidePanel" class="button"> Submit </button>
+			</form>
+		    </section>
+	        <section class="modal">
+	           <div class="specifiedDate"></div>
+	           <div class="dateRange"></div>
+	           <div class="byMonth"></div>
+	           <div class="twelveMonth"></div>
+        </section>       
+	        <section class="slideOut"></section>
+		</div>
+    <script src="flightFinder.js"></script>
+    <script type="text/javascript"> flightFinder.initialize(); </script>
+   </body>
+   
+</html>

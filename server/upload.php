@@ -1,4 +1,7 @@
 <?php
+
+ error_reporting(-1);
+   ini_set('display_errors', 'On');
 ############ Configuration ##############
 $thumb_square_size      = 200; //Thumbnails will be cropped to 200x200 pixels
 $max_image_size         = 500; //Maximum image size (height and width)
@@ -72,9 +75,9 @@ if(isset($_POST) && isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SER
             We can now output image to user's browser or store information in the database*/
             echo '<div align="center">';
            if(strstr($_SERVER['HTTP_USER_AGENT'],'iPhone') || strstr($_SERVER['HTTP_USER_AGENT'],'iPod')){
-                        echo '<img src="/media/'.$thumb_prefix . $new_file_name.'" alt="Thumbnail" height="100" id="avatar_preview" class="iphone-image" />';
+                        echo '<img src="http://54.69.118.223/media/'.$thumb_prefix . $new_file_name.'" alt="Thumbnail" height="100" id="avatar_preview" class="iphone-image" />';
             } else{
-                   echo '<img src="/media/'.$thumb_prefix . $new_file_name.'" alt="Thumbnail" height="100" id="avatar_preview" />';
+                   echo '<img src="http://54.69.118.223/media/'.$thumb_prefix . $new_file_name.'" alt="Thumbnail" height="100" id="avatar_preview" />';
             }
             echo '</div>';
         
